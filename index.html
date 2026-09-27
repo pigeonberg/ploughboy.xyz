@@ -1,0 +1,38 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Ploughboy</title><meta name=description content="Free ads that don't track you."><link rel=canonical href=https://ploughboy.xyz/><link rel=icon href=/favicon.ico sizes=48x48><link rel=stylesheet href=/style.css><meta property="og:type" content="website"><meta property="og:url" content="https://ploughboy.xyz/"><meta property="og:title" content="Ploughboy"><meta property="og:description" content="Free ads that don't track you."><meta property="og:image" content="https://ploughboy.xyz/banner.jpg"></head><body><header><a href=/><img src=/banner.jpg alt="Ploughboy home" width=350 height=176></a><nav aria-label=Main><a href=/#embed>Embed</a>
+<a href=/#submit>Submit an ad</a>
+<a href=/#rules>Rules</a>
+<a href=/#faq>FAQ</a>
+<a href=/#about>About</a>
+<a href=/stats/>Stats</a></nav></header><main><h1>Ploughboy</h1><p class=lede>Free ads that don't track you.</p><p>Each ad is one image and one link. The frame sets no cookies, stores nothing,
+runs no analytics, and can't load anything from other sites. Embedding
+them is free as in beer and free in freedom.</p><iframe class=ad src=/embed/ title=Advertisement width=700 height=90 loading=lazy referrerpolicy=no-referrer sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe><h2 id=embed>Embed the ads</h2><p>Paste this where you want the ad. It shows a 700×90 banner that scales down to fit narrow screens.</p><pre><code class=language-html>&lt;iframe class=&quot;ploughboy-ad&quot; src=&quot;https://ploughboy.xyz/embed/&quot;
+	title=&quot;Advertisement&quot; loading=&quot;lazy&quot; referrerpolicy=&quot;no-referrer&quot;
+	sandbox=&quot;allow-scripts allow-same-origin
+		allow-popups allow-popups-to-escape-sandbox&quot;&gt;&lt;/iframe&gt;
+&lt;style&gt;
+	.ploughboy-ad {
+		display: block; margin: 0 auto; border: 0;
+		width: 100%; max-width: 700px;
+		height: auto; aspect-ratio: 700 / 90;
+	}
+&lt;/style&gt;
+</code></pre><h2 id=submit>Submit an ad</h2><ol><li>Fork <a href=https://codeberg.org/pigeon/ploughboy>the repository</a>.</li><li>Put one 700×90 PNG image in <code>static/ads/img/</code>.</li><li>Add an entry to <code>static/ads/ads.json</code> (below).</li><li>Run <code>sh tools/check.sh</code> and fix anything it reports.</li><li>Open a pull request.</li></ol><pre><code class=language-json>{
+	&quot;link&quot;: &quot;https://example.com/&quot;,
+	&quot;alt&quot;: &quot;What the ad says, for people who can't see it&quot;,
+	&quot;image&quot;: &quot;img/example.com.png&quot;,
+	&quot;user&quot;: &quot;yourcodebergusername&quot;
+}
+</code></pre><p><code>user</code> is your codeberg username, so people can find and contact you.</p><h2 id=rules>Rules</h2><p>Images are PNG or JPEG, exactly 700×90, up to 50KB each.</p><ul><li>Images are PNG, exactly 700×90, up to 50KB each.</li><li>The link is <code>https</code> and goes where the ad says it does.</li><li><code>user</code> is a real codeberg username, so a submitter can be reached.</li><li>Nothing misleading, hateful, sexual or harmful. I get the sole choice to decide what gets merged.</li><li>Everything in the repository is CC0, including the ads you submit.</li></ul><p>Questions or takedown requests: <a href=https://codeberg.org/pigeon/ploughboy/issues>open an issue</a>. See who's
+running ads and who's sponsoring them on the <a href=/stats/>stats page</a>.</p><h2 id=faq>FAQ</h2><p><strong>Who painted the banner?</strong></p><p>The banner is <em>A Ploughboy Riding One of a Pair of Draught-horses Up a Hill</em> by
+<a href=https://en.wikipedia.org/wiki/John_Frederick_Tayler>John Frederick Tayler</a>
+(English, 1802-1889)</p><h2 id=about>About</h2><p>Ploughboy exists to promote things people have put love and care into: a
+personal website, a Minecraft server, a charity, a local boxing club, an
+indie game, even a political or religious link, as long as it's said
+without hate. If it doesn't track visitors, isn't bloated or heavy on
+JavaScript, and isn't something hateful (or something I just don't
+like), it'll probably get merged in. Ploughboy itself costs nothing to
+self-host or to run on somewhere like GitHub Pages or Codeberg Pages, so
+running your own copy is free too. Starting from scratch? <a href=https://landchad.net/>Land
+Chad</a> is a good place to learn how to host a
+website worth promoting.</p><p>This project was inspired by
+<a href=https://mothvertising.moth.monster/>Mothvertising</a></p></main><footer><p><i>Content on this website is licensed under <a href=https://creativecommons.org/publicdomain/zero/1.0/>CC0 1.0 Universal</a></i></p><p><i>Scripts are under a separate <a href=/licences/MIT.txt>MIT licence</a></i></p></footer></body></html>

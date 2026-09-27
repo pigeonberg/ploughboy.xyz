@@ -1,0 +1,175 @@
+/* Colours are from the banner painting, rounded to tidy hex values. */
+:root {
+	color-scheme: light dark;
+
+	--bg:      #EEDDBB;
+	--paper:   #EEEEDD;
+	--ink:     #332211;
+	--bar:     #334433;
+	--bar-ink: #EEEECC;
+	--soil:    #885533;
+	--link:    #AA2222;
+	--code-bg: #332211;
+	--code-fg: #EEEECC;
+
+	--serif: "Iowan Old Style", "Palatino Linotype", Palatino,
+		"Book Antiqua", Georgia, serif;
+	--mono:  ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg:      #222211;
+		--paper:   #222222;
+		--ink:     #EEDDCC;
+		--bar:     #223322;
+		--bar-ink: #EEDDCC;
+		--soil:    #886644;
+		--link:    #EE7766;
+		--code-bg: #111111;
+		--code-fg: #EEDDCC;
+	}
+}
+
+body {
+	margin: 0;
+	font: 1.125rem/1.65 var(--serif);
+	color: var(--ink);
+	background: var(--bg);
+}
+
+main {
+	max-width: 46rem;
+	margin: 0 auto;
+	padding: 2rem 1.5rem 3rem;
+}
+
+header img {
+	display: block;
+	width: 100%;
+	height: clamp(190px, 34vw, 340px);
+	object-fit: cover;
+	object-position: 50% 33%;
+}
+
+header::after {
+	content: "";
+	display: block;
+	height: 16px;
+	background: repeating-linear-gradient(to bottom,
+		var(--soil) 0 3px, var(--bg) 3px 7px);
+	opacity: 0.55;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 2rem;
+	justify-content: center;
+	padding: 0.9rem 1rem;
+	background: var(--bar);
+}
+
+nav a {
+	color: var(--bar-ink);
+	text-decoration: none;
+	padding: 0.1rem 0;
+	border-bottom: 2px solid transparent;
+}
+nav a:hover,
+nav a[aria-current="page"] { border-bottom-color: var(--bar-ink); }
+
+h1, h2 { line-height: 1.2; }
+
+h1 {
+	margin: 0 0 0.5rem;
+	font-size: clamp(2.6rem, 9vw, 3.75rem);
+	text-align: center;
+}
+
+h2 {
+	margin: 2.75rem 0 1rem;
+	padding-bottom: 0.35rem;
+	font-size: 1.6rem;
+	border-bottom: 1px solid var(--soil);
+}
+
+.lede {
+	margin: 0 0 2rem;
+	text-align: center;
+	font-style: italic;
+	font-size: 1.25rem;
+}
+
+p, ul, ol { margin: 0 0 1.1rem; }
+ul, ol { padding-left: 1.5rem; }
+li { margin: 0.4rem 0; }
+li::marker { color: var(--soil); font-weight: 700; }
+
+a { color: var(--link); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, iframe:focus-visible {
+	outline: 3px solid var(--ink);
+	outline-offset: 3px;
+}
+
+code { font-family: var(--mono); font-size: 0.85em; }
+
+:not(pre) > code {
+	padding: 0.1em 0.35em;
+	border-radius: 3px;
+	background: color-mix(in srgb, var(--soil) 22%, transparent);
+}
+
+pre {
+	tab-size: 4;
+	overflow-x: auto;
+	margin: 0 0 1.5rem;
+	padding: 1rem 1.25rem;
+	text-align: left;
+	color: var(--code-fg);
+	background: var(--code-bg);
+	border-left: 4px solid var(--soil);
+	border-radius: 0 4px 4px 0;
+	font-size: 0.85rem;
+	line-height: 1.5;
+}
+pre code { font-size: inherit; }
+
+.ad {
+	display: block;
+	margin: 2rem auto;
+	border: 0;
+	width: 100%;
+	max-width: 700px;
+	height: auto;
+	aspect-ratio: 700 / 90;
+	background: var(--paper);
+	box-shadow: 0 0 0 6px var(--paper), 0 0 0 8px var(--soil);
+}
+
+.table-wrap { overflow-x: auto; }
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 0.35rem 0.75rem 0.35rem 0;
+	text-align: left;
+	border-bottom: 1px solid var(--soil);
+}
+th:last-child, td:last-child { padding-right: 0; }
+
+footer {
+	padding: 1.25rem 1rem;
+	text-align: center;
+	font-size: 0.95rem;
+	color: var(--bar-ink);
+	background: var(--bar);
+}
+footer p { margin: 0.25rem 0; }
+footer a { color: var(--bar-ink); }
+nav a:focus-visible,
+footer a:focus-visible { outline-color: var(--bar-ink); }

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<!-- GitHub Pages can't send custom headers, so the frame's policy lives here. Keep this
+	     first: a meta CSP only covers what comes after it. Everything must come from this
+	     site, so an ad can't pull in scripts, images or requests from anywhere else. -->
+	<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+	<meta name="referrer" content="no-referrer">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="noindex">
+	<title>Ploughboy ad</title>
+	<link rel="stylesheet" href="embed.css">
+</head>
+<body>
+	<a id="ad" target="_blank" rel="noopener noreferrer sponsored" hidden></a>
+	<a id="info" href="https://ploughboy.xyz/" target="_blank" rel="noopener noreferrer"
+		title="What is this?" aria-label="What is this ad? Ploughboy explains." hidden>?</a>
+	<p id="msg" hidden></p>
+	<noscript><p><a href="https://ploughboy.xyz/" target="_blank"
+		rel="noopener noreferrer">ploughboy.xyz</a>&nbsp;needs JavaScript.</p></noscript>
+	<script src="embed.js"></script>
+</body>
+</html>

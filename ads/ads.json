@@ -1,0 +1,20 @@
+[
+  {
+    "link": "https://ploughboy.xyz/",
+    "alt": "Ploughboy: Free ads that don't track you",
+    "image": "img/ploughboy.xyz.png",
+    "user": "pigeon"
+  },
+  {
+    "link": "https://flockless.xyz/",
+    "alt": "Flockless: Pigeon's Personal Website",
+    "image": "img/flockless.xyz.png",
+    "user": "pigeon"
+  },
+  {
+    "link": "https://rosminians.com/",
+    "alt": "Rosminians, Institute of Charity",
+    "image": "img/rosminians.com.png",
+    "user": "pigeon"
+  }
+]
